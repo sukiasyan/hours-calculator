@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import HourCalculatorRow from './components/HourCalculatorRow';
+import HourCalculatorRow from '../components/HourCalculatorRow';
 
 export default function MonthlyPage() {
   const [month] = useState(new Date().toISOString().slice(0, 7));
