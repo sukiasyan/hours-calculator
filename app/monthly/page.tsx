@@ -4,7 +4,7 @@ import { useState } from 'react';
 import HourCalculatorRow from '../components/HourCalculatorRow';
 
 export default function MonthlyPage() {
-  const [month] = useState(new Date().toISOString().slice(0, 7));
+  // const [month] = useState(new Date().toISOString().slice(0, 7));
   const [totalHours, setTotalHours] = useState(0);
   const [dailyHours, setDailyHours] = useState<{ [date: string]: number }>({});
 
@@ -13,6 +13,13 @@ export default function MonthlyPage() {
     date.setDate(i + 1);
     return date.toISOString().split('T')[0];
   });
+
+
+
+
+
+
+  
 
   const handleDayChange = (date: string, hours: number) => {
     setDailyHours(prev => {

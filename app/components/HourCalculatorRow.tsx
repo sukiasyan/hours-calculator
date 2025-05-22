@@ -28,48 +28,59 @@ export default function HourCalculatorRow({ date, onChange }: {
   }, [startH, startM, endH, endM, onChange, date]);
 
   return (
-      <div className="grid grid-cols-7 gap-4 items-center mb-4">
-        <input type="date" value={date} className="p-2 border rounded" disabled />
-        <div className="flex gap-2">
+      <>
+        <div className="w-40">
+          <input
+              type="date"
+              value={date}
+              className="w-full p-2 border rounded"
+              disabled
+          />
+        </div>
+
+        <div className="flex items-center gap-2">
           <input
               type="number"
               min="0"
               max="23"
               value={startH}
               onChange={(e) => setStartH(e.target.value)}
-              className="w-16 p-2 border rounded"
+              className="w-20 p-2 border rounded"
               placeholder="HH"
           />
+          <span>:</span>
           <input
               type="number"
               min="0"
               max="59"
               value={startM}
               onChange={(e) => setStartM(e.target.value)}
-              className="w-16 p-2 border rounded"
+              className="w-20 p-2 border rounded"
               placeholder="MM"
           />
         </div>
-        <div className="flex gap-2">
+
+        <div className="flex items-center gap-2">
           <input
               type="number"
               min="0"
               max="23"
               value={endH}
               onChange={(e) => setEndH(e.target.value)}
-              className="w-16 p-2 border rounded"
+              className="w-20 p-2 border rounded"
               placeholder="HH"
           />
+          <span>:</span>
           <input
               type="number"
               min="0"
               max="59"
               value={endM}
               onChange={(e) => setEndM(e.target.value)}
-              className="w-16 p-2 border rounded"
+              className="w-20 p-2 border rounded"
               placeholder="MM"
           />
         </div>
-      </div>
+      </>
   );
 }
